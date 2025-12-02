@@ -1,4 +1,6 @@
-const { Client, LocalAuth } = require('whatsapp-web.js');
+const { Client, RemoteAuth } = require('whatsapp-web.js');
+const { MongoStore } = require('wwebjs-mongo');
+const mongoose = require('mongoose');
 const qrcode = require('qrcode-terminal');
 
 let client;
@@ -7,21 +9,45 @@ let isReady = false;
 const initializeWhatsApp = () => {
     console.log('Initializing WhatsApp Client...');
 
+    const store = new MongoStore({ mongoose: mongoose });
+
     client = new Client({
-        authStrategy: new LocalAuth(),
+        authStrategy: new RemoteAuth({
+            store: store,
+            backupSyncIntervalMs: 300000
+        }),
         puppeteer: {
-            args: ['--no-sandbox', '--disable-setuid-sandbox']
+            args: ['--no-sandbox', '--disable-setuid-sandbox'],
+            headless: true
         }
     });
 
-    client.on('qr', (qr) => {
+    client.on('qr', async (qr) => {
         console.log('QR RECEIVED. Scan with WhatsApp:');
         qrcode.generate(qr, { small: true });
+
+        // Pairing Code Logic
+        const pairingNumber = process.env.WHATSAPP_PAIRING_NUMBER;
+        if (pairingNumber) {
+            console.log(`Requesting pairing code for ${pairingNumber}...`);
+            try {
+                const code = await client.requestPairingCode(pairingNumber);
+                console.log('--------------------------------------------------');
+                console.log('WHATSAPP PAIRING CODE:', code);
+                console.log('--------------------------------------------------');
+            } catch (err) {
+                console.error('Failed to request pairing code:', err);
+            }
+        }
     });
 
     client.on('ready', () => {
         console.log('WhatsApp Client is ready!');
         isReady = true;
+    });
+
+    client.on('remote_session_saved', () => {
+        console.log('WhatsApp Session Saved to DB');
     });
 
     client.on('authenticated', () => {
