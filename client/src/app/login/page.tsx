@@ -8,7 +8,9 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import GlassIcon from '@/components/ui/GlassIcon';
 import { Lock, Mail, MessageSquare, Phone, LogIn } from 'lucide-react';
-export default function LoginPage() {
+import { Suspense } from 'react';
+
+function LoginForm() {
     const searchParams = useSearchParams();
     const redirect = searchParams.get('redirect');
 
@@ -204,6 +206,14 @@ export default function LoginPage() {
                 </div>
             </div>
         </div>
+    );
+}
+
+export default function LoginPage() {
+    return (
+        <Suspense fallback={<div className="page-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '6rem' }}>Loading...</div>}>
+            <LoginForm />
+        </Suspense>
     );
 }
 
