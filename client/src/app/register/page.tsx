@@ -25,7 +25,9 @@ const COUNTRY_CODES = [
     { code: '+61', country: 'AU' }
 ];
 
-export default function RegisterPage() {
+import { Suspense } from 'react';
+
+function RegisterForm() {
     const searchParams = useSearchParams();
     const roleParam = searchParams.get('role');
     const initialRole = (roleParam === 'provider' || roleParam === 'PROVIDER') ? 'PROVIDER' : 'CLIENT';
@@ -316,6 +318,14 @@ export default function RegisterPage() {
                 </div>
             </div>
         </div>
+    );
+}
+
+export default function RegisterPage() {
+    return (
+        <Suspense fallback={<div className="page-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', paddingTop: '6rem' }}>Loading...</div>}>
+            <RegisterForm />
+        </Suspense>
     );
 }
 
