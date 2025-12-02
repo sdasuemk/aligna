@@ -1,0 +1,168 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e3]:
+      - link "📅 ETO" [ref=e4] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e5]:
+        - link "Dashboard" [ref=e6] [cursor=pointer]:
+          - /url: /dashboard
+        - link "Profile" [ref=e7] [cursor=pointer]:
+          - /url: /profile
+        - generic [ref=e8]: provider@example.com
+        - button "Logout" [ref=e9] [cursor=pointer]
+  - main [ref=e10]:
+    - generic [ref=e11]:
+      - complementary [ref=e12]:
+        - generic [ref=e13]:
+          - generic [ref=e14]: T
+          - generic [ref=e15]: Test Provider
+          - generic [ref=e16]: provider@example.com
+        - navigation [ref=e17]:
+          - link "📊 Dashboard" [ref=e18] [cursor=pointer]:
+            - /url: /dashboard
+            - generic [ref=e19]: 📊
+            - generic [ref=e20]: Dashboard
+          - link "💼 Services" [ref=e21] [cursor=pointer]:
+            - /url: /dashboard/services
+            - generic [ref=e22]: 💼
+            - generic [ref=e23]: Services
+          - link "📅 Calendar" [ref=e24] [cursor=pointer]:
+            - /url: /dashboard/calendar
+            - generic [ref=e25]: 📅
+            - generic [ref=e26]: Calendar
+          - link "📋 Appointments" [ref=e27] [cursor=pointer]:
+            - /url: /dashboard/appointments
+            - generic [ref=e28]: 📋
+            - generic [ref=e29]: Appointments
+          - link "📈 Analytics" [ref=e30] [cursor=pointer]:
+            - /url: /dashboard/analytics
+            - generic [ref=e31]: 📈
+            - generic [ref=e32]: Analytics
+          - link "👥 Clients" [ref=e33] [cursor=pointer]:
+            - /url: /dashboard/clients
+            - generic [ref=e34]: 👥
+            - generic [ref=e35]: Clients
+          - link "⚙️ Settings" [ref=e36] [cursor=pointer]:
+            - /url: /dashboard/settings
+            - generic [ref=e37]: ⚙️
+            - generic [ref=e38]: Settings
+      - main [ref=e39]:
+        - generic [ref=e40]:
+          - generic [ref=e41]:
+            - heading "November 2025" [level=1] [ref=e42]
+            - generic [ref=e43]:
+              - button "←" [ref=e44] [cursor=pointer]
+              - button "Today" [ref=e45] [cursor=pointer]
+              - button "→" [ref=e46] [cursor=pointer]
+          - generic [ref=e47]:
+            - generic [ref=e48]:
+              - generic [ref=e49]: Sun
+              - generic [ref=e50]: Mon
+              - generic [ref=e51]: Tue
+              - generic [ref=e52]: Wed
+              - generic [ref=e53]: Thu
+              - generic [ref=e54]: Fri
+              - generic [ref=e55]: Sat
+            - generic [ref=e56]:
+              - generic [ref=e59] [cursor=pointer]: "26"
+              - generic [ref=e63] [cursor=pointer]: "27"
+              - generic [ref=e67] [cursor=pointer]: "28"
+              - generic [ref=e71] [cursor=pointer]: "29"
+              - generic [ref=e75] [cursor=pointer]: "30"
+              - generic [ref=e79] [cursor=pointer]: "31"
+              - generic [ref=e83] [cursor=pointer]: "1"
+              - generic [ref=e87] [cursor=pointer]: "2"
+              - generic [ref=e91] [cursor=pointer]: "3"
+              - generic [ref=e95] [cursor=pointer]: "4"
+              - generic [ref=e99] [cursor=pointer]: "5"
+              - generic [ref=e103] [cursor=pointer]: "6"
+              - generic [ref=e107] [cursor=pointer]: "7"
+              - generic [ref=e111] [cursor=pointer]: "8"
+              - generic [ref=e115] [cursor=pointer]: "9"
+              - generic [ref=e119] [cursor=pointer]: "10"
+              - generic [ref=e123] [cursor=pointer]: "11"
+              - generic [ref=e127] [cursor=pointer]: "12"
+              - generic [ref=e131] [cursor=pointer]: "13"
+              - generic [ref=e135] [cursor=pointer]: "14"
+              - generic [ref=e139] [cursor=pointer]: "15"
+              - generic [ref=e143] [cursor=pointer]: "16"
+              - generic [ref=e147] [cursor=pointer]: "17"
+              - generic [ref=e151] [cursor=pointer]: "18"
+              - generic [ref=e155] [cursor=pointer]: "19"
+              - generic [ref=e159] [cursor=pointer]: "20"
+              - generic [ref=e163] [cursor=pointer]: "21"
+              - generic [ref=e167] [cursor=pointer]: "22"
+              - generic [ref=e171] [cursor=pointer]: "23"
+              - generic [ref=e175] [cursor=pointer]: "24"
+              - generic [ref=e179] [cursor=pointer]: "25"
+              - generic [ref=e181] [cursor=pointer]:
+                - generic [ref=e182]:
+                  - generic [ref=e183]: "26"
+                  - generic [ref=e184]: "1"
+                - generic [ref=e186]: 5:49 PM - Test Client
+              - generic [ref=e189] [cursor=pointer]: "27"
+              - generic [ref=e193] [cursor=pointer]: "28"
+              - generic [ref=e197] [cursor=pointer]: "29"
+              - generic [ref=e201] [cursor=pointer]: "30"
+              - generic [ref=e205] [cursor=pointer]: "1"
+              - generic [ref=e209] [cursor=pointer]: "2"
+              - generic [ref=e213] [cursor=pointer]: "3"
+              - generic [ref=e217] [cursor=pointer]: "4"
+              - generic [ref=e221] [cursor=pointer]: "5"
+              - generic [ref=e225] [cursor=pointer]: "6"
+  - contentinfo [ref=e227]:
+    - generic [ref=e228]:
+      - generic [ref=e229]:
+        - generic [ref=e230]:
+          - heading "📅 ETO" [level=3] [ref=e231]
+          - paragraph [ref=e232]: Simplifying appointment scheduling for professionals worldwide.
+        - generic [ref=e233]:
+          - heading "Product" [level=4] [ref=e234]
+          - list [ref=e235]:
+            - listitem [ref=e236]:
+              - link "Get Started" [ref=e237] [cursor=pointer]:
+                - /url: /register
+            - listitem [ref=e238]:
+              - link "Login" [ref=e239] [cursor=pointer]:
+                - /url: /login
+            - listitem [ref=e240]:
+              - link "Features" [ref=e241] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e242]:
+              - link "Pricing" [ref=e243] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e244]:
+          - heading "Company" [level=4] [ref=e245]
+          - list [ref=e246]:
+            - listitem [ref=e247]:
+              - link "About Us" [ref=e248] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e249]:
+              - link "Blog" [ref=e250] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e251]:
+              - link "Careers" [ref=e252] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e253]:
+              - link "Contact" [ref=e254] [cursor=pointer]:
+                - /url: "#"
+        - generic [ref=e255]:
+          - heading "Legal" [level=4] [ref=e256]
+          - list [ref=e257]:
+            - listitem [ref=e258]:
+              - link "Privacy Policy" [ref=e259] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e260]:
+              - link "Terms of Service" [ref=e261] [cursor=pointer]:
+                - /url: "#"
+            - listitem [ref=e262]:
+              - link "Cookie Policy" [ref=e263] [cursor=pointer]:
+                - /url: "#"
+      - paragraph [ref=e265]: © 2025 ETO. All rights reserved.
+  - button "Open Next.js Dev Tools" [ref=e271] [cursor=pointer]:
+    - img [ref=e272]
+  - alert [ref=e275]
+```

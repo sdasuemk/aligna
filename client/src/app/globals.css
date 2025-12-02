@@ -1,0 +1,234 @@
+:root {
+  /* Light Theme (Default - kept for reference/fallback) */
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --secondary: #64748b;
+  --background: #f8fafc;
+  --surface: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --error: #ef4444;
+  --success: #22c55e;
+
+  /* Dark Theme Variables (Slate Palette) */
+  --dark-bg: #0f172a;
+  /* Slate 900 */
+  --dark-surface: #1e293b;
+  /* Slate 800 */
+  --dark-border: rgba(148, 163, 184, 0.1);
+  --dark-text-main: #ffffff;
+  --dark-text-muted: #94a3b8;
+  /* Slate 400 */
+
+  /* Brand Colors */
+  --brand-primary: #06b6d4;
+  /* Cyan 500 */
+  --brand-secondary: #3b82f6;
+  /* Blue 500 */
+  --brand-accent: #14b8a6;
+  /* Teal 500 */
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  --gradient-text: linear-gradient(to right, #818cf8, #c084fc, #f472b6);
+
+  /* Text Gradient Utility */
+  .text-gradient {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: inline-block;
+  }
+
+  /* Common Values */
+  --radius: 0.5rem;
+  --radius-lg: 1rem;
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1),
+  0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --font-sans: 'Inter',
+  system-ui,
+  -apple-system,
+  sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--dark-bg);
+  /* Default to dark theme for now as per app design */
+  color: var(--dark-text-main);
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* --- Utility Classes --- */
+
+/* Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.grid {
+  display: grid;
+}
+
+.page-container {
+  background-color: var(--dark-bg);
+  min-height: 100vh;
+  color: var(--dark-text-main);
+  padding: 2rem;
+  font-family: var(--font-sans);
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--dark-border);
+  overflow: hidden;
+}
+
+.glass-card {
+  background: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--dark-border);
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+  border-color: rgba(129, 140, 248, 0.3);
+}
+
+/* Typography */
+.heading-xl {
+  font-size: 2rem;
+  font-weight: 800;
+  background: var(--gradient-text);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.heading-lg {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--dark-text-main);
+  margin-bottom: 1rem;
+}
+
+.text-muted {
+  color: var(--dark-text-muted);
+  font-size: 0.9rem;
+}
+
+/* Forms */
+.input-dark {
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  color: white;
+  outline: none;
+  font-size: 0.9rem;
+  width: 100%;
+  transition: border-color 0.2s;
+}
+
+.input-dark:focus {
+  border-color: var(--brand-primary);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: all 0.2s;
+  border: none;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background: var(--gradient-primary);
+  color: white;
+  box-shadow: 0 4px 6px -1px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--dark-text-muted);
+}
+
+.btn-ghost:hover {
+  background: rgba(148, 163, 184, 0.1);
+  color: white;
+}
+
+/* Badges */
+.badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-block;
+}
