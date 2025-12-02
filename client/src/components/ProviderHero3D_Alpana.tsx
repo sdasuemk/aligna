@@ -52,8 +52,8 @@ function CosmicAlpana() {
 
     // Generate Alpana Pattern Data
     const { nodes, connections } = useMemo(() => {
-        const nodes = [];
-        const connections = [];
+        const nodes: any[] = [];
+        const connections: any[] = [];
         const rings = [
             { radius: 1, count: 8, color: '#FFD700', size: 0.08 },   // Inner Gold
             { radius: 2.5, count: 16, color: '#FF4500', size: 0.06 }, // Middle Red
