@@ -61,7 +61,7 @@ function MysticLotus() {
 
     // Generate Lotus Pattern Data
     const petals = useMemo(() => {
-        const items = [];
+        const items: any[] = [];
         const layers = [
             { count: 6, radius: 1.5, scale: [0.5, 1.2, 0.1], color: '#00FFFF', z: 0.2 },   // Inner Cyan
             { count: 12, radius: 3, scale: [0.8, 1.8, 0.1], color: '#8A2BE2', z: 0.1 },    // Middle Purple
