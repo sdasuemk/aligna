@@ -217,7 +217,7 @@ router.post('/send-verification-otp', async (req, res) => {
         res.json({ message: `OTP ${otp} sent successfully via ${channel || 'EMAIL'}` });
     } catch (error) {
         console.error('Send verification OTP error:', error);
-        res.status(500).json({ error: 'Server error' });
+        res.status(500).json({ error: 'Server error', details: error.message });
     }
 });
 

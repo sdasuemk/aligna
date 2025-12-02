@@ -8,6 +8,15 @@ const transporter = nodemailer.createTransport({
     }
 });
 
+// Verify connection configuration
+transporter.verify(function (error, success) {
+    if (error) {
+        console.error('Email Service Connection Error:', error);
+    } else {
+        console.log('Email Service is ready to send messages');
+    }
+});
+
 const sendEmailOtp = async (email, otp) => {
     try {
         const mailOptions = {
