@@ -9,24 +9,12 @@ const webPush = require('web-push');
 const envPath = path.join(__dirname, '.env');
 dotenv.config({ path: envPath });
 
-// Connect to MongoDB
-connectDB();
-
-// Configure Web Push
-const publicVapidKey = process.env.PUBLIC_VAPID_KEY;
-const privateVapidKey = process.env.PRIVATE_VAPID_KEY;
-
-if (publicVapidKey && privateVapidKey) {
-    webPush.setVapidDetails(
-        'mailto:test@test.com',
-        publicVapidKey,
-        privateVapidKey
-    );
-}
-
-// Initialize WhatsApp Service
-const { initializeWhatsApp } = require('./services/whatsappService');
-initializeWhatsApp();
+// Connect to MongoDB and then initialize services
+connectDB().then(() => {
+    // Initialize WhatsApp Service only after DB is connected
+    const { initializeWhatsApp } = require('./services/whatsappService');
+    initializeWhatsApp();
+});
 
 const http = require('http');
 const { Server } = require('socket.io');
