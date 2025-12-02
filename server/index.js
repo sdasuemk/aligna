@@ -33,10 +33,13 @@ const { Server } = require('socket.io');
 
 const app = express();
 const server = http.createServer(app);
+const clientUrl = process.env.CLIENT_URL || 'http://localhost:3000';
+
 const io = new Server(server, {
     cors: {
-        origin: "*", // Allow all origins for now, restrict in production
-        methods: ["GET", "POST", "PUT", "DELETE"]
+        origin: clientUrl,
+        methods: ["GET", "POST", "PUT", "DELETE"],
+        credentials: true
     }
 });
 
@@ -57,7 +60,10 @@ io.on('connection', (socket) => {
 });
 const PORT = process.env.PORT || 5002;
 
-app.use(cors());
+app.use(cors({
+    origin: clientUrl,
+    credentials: true
+}));
 app.use(express.json());
 
 // Make io accessible to our router
